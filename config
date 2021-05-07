@@ -147,7 +147,6 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+End exec poweroff
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
@@ -244,7 +243,7 @@ bindsym XF86Explorer exec dolphin
 assign [class="Code"] $ws4
 assign [class="Atom"] $ws4
 # WS3 Files:
-exec --no-startup-id sh -c 'sleep 1; i3-msg "workspace $ws3; exec thunar; split h; exec konsole -e htop"'
+exec --no-startup-id sh -c 'sleep 1; i3-msg "workspace $ws3; exec dolphin; split h; exec konsole -e htop"'
 # WS2 Terminal+Vim:
 exec --no-startup-id sh -c 'sleep 3; i3-msg "workspace $ws2; exec terminator; split h; exec terminator -e vim"'
 # WS1 Firefox:
@@ -259,18 +258,18 @@ assign [class="libreoffice-startcenter"] $ws6
 assign [class="Brave-browser"] $ws7
 
 # Start acpi for Battery Charge indication:
-exec acpi
+exec_always acpi
 
 
 
 
 ### MONITOR SETTINGS ###
 #CUSTOM Wallpaper:
-exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/terrace.jpg
+#exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/terrace.jpg
 #exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/root.jpg
 #exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/rice.jpg
 #exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/pexels-pixabay-158385.jpg
-#exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/cyberDraw.jpg
+exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/cyberDraw.jpg
 #exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/bridge.jpg
 #exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/terrace.jpg
 #exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/climber.jpg
