@@ -1,0 +1,16 @@
+Standard Apps:
+- thunar
+- sudo dnf install light
+- xrandr & arandr
+- i3-dmenu-SETTINGS
+- pavucontrol
+- lxappearance
+- xset  #Managing Display Timeout etc
+- picom #Replacement for compton
+
+
+Standard Befehle:
+- xev -> Show Keymap Naming
+- xprop -> Show Class information of program
+- pkill -> pkill + Programm to kill
+- pgrep -> pgrep + ProgrammName to search for processID
