@@ -107,16 +107,23 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: Web "
-set $ws2 "2: Terminal-Vim"
-set $ws3 "3: Files"
-set $ws4 "4: Code"
-set $ws5 "5: Communication"
-set $ws6 "6: Office"
-set $ws7 "7: Media"
-set $ws8 "8: EXTERNAL_MAIN"
-set $ws9 "9: EXTERNAL_1"
-set $ws10 "10: EXTERNAL_2"
+#browser
+set $ws1 "1: "
+#terminal
+set $ws2 "2: "
+#FileManagers
+set $ws3 "3: "
+#Code Editor
+set $ws4 "4: "
+#Media
+set $ws5 "5: "
+#Office
+set $ws6 "6: "
+#Communication
+set $ws7 "7: "
+set $ws8 "8: EXT-MAIN"
+set $ws9 "9: EXT-1"
+set $ws10 "10: EXT-2"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -234,28 +241,31 @@ bindsym XF86Search exec i3-dmenu-desktop
 # Open Dolphin File Manager:
 bindsym XF86Explorer exec dolphin
 
+# Shutdown_Menu:
+bindsym $mod+End exec ~/.config/i3blocks/i3blocks-contrib/shutdown_menu/shutdown_menu
+
 
 
 
 ### Execute Programm @ Startup ###
 # WS4 VS-Code:
 #exec --no-startup-id sh -c 'sleep 0; i3-msg "workspace $ws4; exec code"'
-assign [class="Code"] $ws4
+#assign [class="Code"] $ws4
 assign [class="Atom"] $ws4
 # WS3 Files:
-exec --no-startup-id sh -c 'sleep 1; i3-msg "workspace $ws3; exec dolphin; split h; exec konsole -e htop"'
+exec --no-startup-id sh -c 'sleep 1; i3-msg "workspace $ws3; exec konsole -e ranger; exec thunar"'
 # WS2 Terminal+Vim:
-exec --no-startup-id sh -c 'sleep 3; i3-msg "workspace $ws2; exec terminator; split h; exec terminator -e vim"'
+exec --no-startup-id sh -c 'sleep 3; i3-msg "workspace $ws2; exec terminator -e vim; split h; exec terminator"'
 # WS1 Firefox:
 exec --no-startup-id sh -c 'sleep 5; i3-msg "workspace $ws1; exec firefox"'
-assign [class="Firefox"] $ws1
+#assign [class="Firefox"] $ws1
 
-# WS5 Communication:
-assign [class="Thunderbird"] $ws5
+# WS7 Communication:
+assign [class="Thunderbird"] $ws7
 # WS6 Office:
 assign [class="libreoffice-startcenter"] $ws6
-# WS7 Media:
-assign [class="Brave-browser"] $ws7
+# WS5 Media:
+assign [class="Brave-browser"] $ws5
 
 # Start acpi for Battery Charge indication:
 exec_always acpi
@@ -299,20 +309,16 @@ bindsym $mod+o workspace next
 bindsym $mod+i workspace prev
 
 # Screen brightness controls with notification - NEEDS: "sudo dnf install light"
-bindsym XF86MonBrightnessUp exec "light -A 5; notify-send 'brightness up'";
-bindsym XF86MonBrightnessDown exec "light -U 5; notify-send 'brightness down'";
+bindsym XF86MonBrightnessUp exec "light -A 5; notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown exec "light -U 5; notify-send 'brightness down'"
 
 
 
 ### Rofi configuration
-# bindsym $mod+d exec rofi -show drun -lines 6 -eh 2 -width 50 -theme solarized -font "hack 12" -hide-scrollbar
-bindsym $mod+d exec rofi -show run -modi drun -lines 10 -eh 2 -width 50 -theme solarized -font "hack 14" -hide-scrollbar
+bindsym $mod+d exec rofi -show run -modi drun -lines 10 -eh 2 -width 50 -theme solarized_alternate -font "hack 14" -hide-scrollbar
 
+### Remove Titlebars:
+for_window [class="^.*"] border pixel 1
 
-
-
-
-
-
-
-
+### Start picom
+exec_always picom --config ~/.config/picom/picom.conf
