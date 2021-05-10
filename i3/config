@@ -85,6 +85,9 @@ bindsym $mod+h split h
 # split in vertical orientation
 bindsym $mod+v split v
 
+# split mode_toggle
+bindsym $mod+t split t
+
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
@@ -253,7 +256,7 @@ bindsym $mod+End exec ~/.config/i3blocks/i3blocks-contrib/shutdown_menu/shutdown
 #assign [class="Code"] $ws4
 assign [class="Atom"] $ws4
 # WS3 Files:
-exec --no-startup-id sh -c 'sleep 1; i3-msg "workspace $ws3; exec konsole -e ranger; exec thunar"'
+exec --no-startup-id sh -c 'sleep 0; i3-msg "workspace $ws3; exec dolphin; exec konsole -e ranger"'
 # WS2 Terminal+Vim:
 exec --no-startup-id sh -c 'sleep 3; i3-msg "workspace $ws2; exec terminator -e vim; split h; exec terminator"'
 # WS1 Firefox:
