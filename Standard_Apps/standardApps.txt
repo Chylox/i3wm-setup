@@ -7,6 +7,7 @@ Standard Apps:
 - lxappearance
 - xset  #Managing Display Timeout etc
 - picom #Replacement for compton
+- sxiv (Image Viewer)
 
 
 Standard Befehle:
@@ -14,3 +15,4 @@ Standard Befehle:
 - xprop -> Show Class information of program
 - pkill -> pkill + Programm to kill
 - pgrep -> pgrep + ProgrammName to search for processID
+

@@ -266,7 +266,10 @@ exec --no-startup-id sh -c 'sleep 5; i3-msg "workspace $ws1; exec firefox"'
 # WS7 Communication:
 assign [class="Thunderbird"] $ws7
 # WS6 Office:
+assign [class="libreoffice"] $ws6
 assign [class="libreoffice-startcenter"] $ws6
+assign [class="libreoffice-writer"] $ws6
+assign [class="Evince"] $ws6
 # WS5 Media:
 assign [class="Brave-browser"] $ws5
 
