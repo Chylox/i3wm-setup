@@ -464,10 +464,10 @@ mode "$mode_gaps_outer" {
 ########## Key - Bindings ##########
 
 # Next Workspace
-bindsym --whole-window --border $mod+button4 workspace next
+bindsym --whole-window --border $mod+button4 workspace prev
 bindsym $mod+o workspace next
 # Prev Workspace
-bindsym --whole-window --border $mod+button5 workspace prev
+bindsym --whole-window --border $mod+button5 workspace next
 bindsym $mod+i workspace prev
 
 # Open Dolphin File Manager
@@ -478,25 +478,31 @@ exec_always blueman-applet
 
 
 
-########## SET - WALLPAPER ##########
 
-exec feh
+########## SET - WALLPAPER ##########
 #CUSTOM Wallpaper:
 #exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/terrace.jpg
 #exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/root.jpg
 #exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/rice.jpg
 #exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/pexels-pixabay-158385.jpg
-#exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/cyberDraw.jpg
+exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/cyberDraw.jpg
 #exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/bridge.jpg
-exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/terrace.jpg
+#exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/terrace.jpg
 #exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/climber.jpg
+#exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/wave.png
 #exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/cloud.jpg
+#exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/fuji.jpg
+#exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/stoneBridge.jpg
+#exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/manjaroMountain.jpg
+#exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/city.jpg
 
 
 
 
 ########## SETTINGS - 2nd MONITOR CONNECTED ##########
+###Monitor 1 -
 bindsym XF86LaunchA exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off
+#bindsym XF86LaunchA exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 760x1440 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --mode 3440x1440 --pos 0x0 --rotate normal --output VIRTUAL1 --off
 
 ########## SETTINGS - ONLY LAPTOP MONITOR ##########
 exec_always xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off
@@ -519,23 +525,37 @@ workspace $ws9 output HDMI2
 
 
 ########## ROFI SETUP ##########
-bindsym $mod+d exec rofi -show run -modi drun -lines 10 -eh 2 -width 50 -theme gruvbox-dark-soft -font "hack 14" -hide-scrollbar
+bindsym $mod+d exec rofi -show run -modi drun -lines 10 -eh 1 -width 50 -theme Arc-Dark -font "hack 14" -hide-scrollbar -fake-transparency -fake-background background
 
 
 
 
 ########## Execute Programm @ Startup ##########
-# WS4 Code:
-assign [class="Atom"] $ws4
-# WS2 Files:
-exec --no-startup-id sh -c 'sleep 0; i3-msg "workspace $ws2; exec dolphin; exec terminator -e ranger"'
-# WS1 Firefox:
-exec --no-startup-id sh -c 'sleep 3; i3-msg "workspace $ws1; exec firefox"'
-#assign [class="Firefox"] $ws1
-
+# WS9 Ext_2
+# WS8 Ext_1:
+assign [class="vlc"] $ws8
 # WS7 Communication:
 assign [class="Thunderbird"] $ws7
 # WS6 Office:
 assign [class="libreoffice"] $ws6
 # WS5 Media:
 assign [class="Brave-browser"] $ws5
+# WS4 Code:
+assign [class="Atom"] $ws4
+# WS3 Terminal
+# WS2 Files:
+#exec --no-startup-id sh -c 'sleep 0; i3-msg "workspace $ws2; exec dolphin; exec terminator -e ranger"'
+# WS1 Firefox:
+exec --no-startup-id sh -c 'sleep 3; i3-msg "workspace $ws1; exec firefox"'
+#assign [class="Firefox"] $ws1
+
+
+
+
+########## ALWAYS ACTIVATE ROFI ##########
+exec_always picom
+
+
+
+########## POLYBAR - LAUNCH SCRIPT ##########
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
