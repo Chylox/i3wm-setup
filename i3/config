@@ -481,11 +481,11 @@ exec_always blueman-applet
 
 ########## SET - WALLPAPER ##########
 #CUSTOM Wallpaper:
-#exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/terrace.jpg
+exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/terrace.jpg
 #exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/root.jpg
 #exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/rice.jpg
 #exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/pexels-pixabay-158385.jpg
-exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/cyberDraw.jpg
+#exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/cyberDraw.jpg
 #exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/bridge.jpg
 #exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/terrace.jpg
 #exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/climber.jpg
@@ -501,8 +501,8 @@ exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/cyberDraw.jpg
 
 ########## SETTINGS - 2nd MONITOR CONNECTED ##########
 ###Monitor 1 -
-bindsym XF86LaunchA exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off
-#bindsym XF86LaunchA exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 760x1440 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --mode 3440x1440 --pos 0x0 --rotate normal --output VIRTUAL1 --off
+#bindsym XF86LaunchA exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off
+bindsym XF86LaunchA exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 760x1440 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --mode 3440x1440 --pos 0x0 --rotate normal --output VIRTUAL1 --off
 
 ########## SETTINGS - ONLY LAPTOP MONITOR ##########
 exec_always xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off
