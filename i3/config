@@ -500,9 +500,10 @@ exec_always feh --bg-scale /home/chrisbo/Pictures/Wallpapers/terrace.jpg
 
 
 ########## SETTINGS - 2nd MONITOR CONNECTED ##########
-###Monitor 1 -
-#bindsym XF86LaunchA exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off
-bindsym XF86LaunchA exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 760x1440 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --mode 3440x1440 --pos 0x0 --rotate normal --output VIRTUAL1 --off
+###Monitor 1 - HD
+bindsym XF86LaunchA exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off
+###Monitor 2 - UW QHD
+#bindsym XF86LaunchA exec xrandr --output eDP1 --primary --mode 1920x1080 --pos 760x1440 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --mode 3440x1440 --pos 0x0 --rotate normal --output VIRTUAL1 --off
 
 ########## SETTINGS - ONLY LAPTOP MONITOR ##########
 exec_always xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off
